@@ -630,6 +630,11 @@ Rails.application.routes.draw do
         end
       end
 
+      match '/pro/subscriptions/listener' => 'subscriptions/webhooks#update'
+
+      match '/profile/subscriptions/update_card' => 'payment_methods#update',
+            :as => :update_subscription_payment,
+            :via => :post
     end
 
   end
